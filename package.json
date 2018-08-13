@@ -4,6 +4,10 @@
   "bin": {
     "poject-deploy": "./bin/deploy.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chen-rongliang/poject-deploy.git"
+  },
   "dependencies": {},
   "deprecated": false,
   "description": "发送指定目录或文件到远程服务器上",
@@ -13,10 +17,11 @@
   "license": "ISC",
   "main": "index.js",
   "name": "poject-deploy",
+  "homepage": "https://github.com/chen-rongliang/poject-deploy#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.0.5",
+  "version": "1.0.8",
   "directories": {
     "lib": "lib"
   }

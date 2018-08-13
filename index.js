@@ -12,12 +12,16 @@ const rf = require(path.resolve(__dirname, 'lib/rf'))
 var command = process.argv.slice(2) || 'prod'
 var depConf = require(path.resolve('.', 'deploy-conf'))[command]
 
-// 遍历文件
-let files = rf(depConf.form)
-
-// 开始传输流程
-server({
-    receiver: depConf.receiver,
-    to: depConf.to,
-    files
-})
+if(depConf){
+    // 遍历文件
+    let files = rf(depConf.form)
+    
+    // 开始传输流程
+    server({
+        receiver: depConf.receiver,
+        to: depConf.to,
+        files
+    })
+}else {
+    console.warn('undefined command!')
+}
