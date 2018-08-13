@@ -9,19 +9,30 @@ const server = require(path.resolve(__dirname, 'lib/server'))
 const rf = require(path.resolve(__dirname, 'lib/rf'))
 
 // 接收命令行相关参数
-var command = process.argv.slice(2) || 'prod'
+var command = process.argv.slice(2)
+
+// 命令为空
+if((command instanceof Array && command.length == 0) || !command){
+    command = 'prod'
+}
+
 var depConf = require(path.resolve('.', 'deploy-conf'))[command]
 
 if(depConf){
-    // 遍历文件
-    let files = rf(depConf.form || '/')
-    
-    // 开始传输流程
-    server({
-        receiver: depConf.receiver,
-        to: depConf.to || '/',
-        files
-    })
+    if(!depConf.receiver){
+        console.error('receiver is required!')
+    }else {
+        // 遍历文件
+        let files = rf(depConf.form || '/')
+        
+        // 开始传输流程
+        console.log('start upload => ' + command)
+        server({
+            receiver: depConf.receiver,
+            to: depConf.to || '/',
+            files
+        })
+    }
 }else {
-    console.warn('undefined command!')
+    console.error('undefined command!')
 }

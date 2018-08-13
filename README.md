@@ -1,6 +1,6 @@
 ## poject-deploy说明文档 ##
 
-> 版本： 1.0.7
+> 版本： 1.0.10
 > 更新： 2018-08-13
 
 poject-deploy是一个简单的远端服务器部署工具，主要实现：
@@ -24,7 +24,7 @@ poject-deploy是一个简单的远端服务器部署工具，主要实现：
 
 	{
 	    "prod": {
-	        "receiver": "http://server-url", // 部署服务器地址
+	        "receiver": "http://server-url", // 部署服务器地址，不可缺少！
 	        "form": "/",                     // 文件目录，可缺省，默认为 "/"
 	        "to": "server-save-path"         // 部署服务器保存的路径，可缺省，默认为 "/"
 	    }
