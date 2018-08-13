@@ -1,0 +1,23 @@
+{
+  "_from": "poject-deploy",
+  "author": "chen-rogliang@qq.com",
+  "bin": {
+    "poject-deploy": "./bin/deploy.js"
+  },
+  "dependencies": {},
+  "deprecated": false,
+  "description": "发送指定目录或文件到远程服务器上",
+  "keywords": [
+    "deploy"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "poject-deploy",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.4",
+  "directories": {
+    "lib": "lib"
+  }
+}
