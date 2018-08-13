@@ -14,12 +14,12 @@ var depConf = require(path.resolve('.', 'deploy-conf'))[command]
 
 if(depConf){
     // 遍历文件
-    let files = rf(depConf.form)
+    let files = rf(depConf.form || '/')
     
     // 开始传输流程
     server({
         receiver: depConf.receiver,
-        to: depConf.to,
+        to: depConf.to || '/',
         files
     })
 }else {
