@@ -23,15 +23,21 @@ if(depConf){
         console.error('receiver is required!')
     }else {
         // 遍历文件
-        let files = rf(depConf.form || '/')
+        let files = rf(depConf.form || '.', depConf.ignore || [])
         
-        // 开始传输流程
-        console.log('start upload => ' + command)
-        server({
-            receiver: depConf.receiver,
-            to: depConf.to || '/',
-            files
-        })
+        // 找到文件了
+        if(files.length){
+            // 开始传输流程
+            console.log('start upload => ' + command)
+            server({
+                receiver: depConf.receiver,
+                to: depConf.to || '/',
+                data: depConf.data || {},
+                files
+            })
+        }else {
+            console.log('no file.')
+        }
     }
 }else {
     console.error('undefined command!')
