@@ -17,25 +17,25 @@ poject-deploy是一个简单的远端服务器部署工具，主要实现：
 关于node和npm的安装就不说了，国内推荐使用cnpm
 
 **在项目中安装组件：**
-
+```
     npm i -S poject-deploy
+```
     
 **在项目根目录下添加 deploy-conf.json 配置文件：**
 
-	{
-	    "prod": {
-	        "receiver": "http://server-url", // 部署服务器地址，不可缺少！
-	        "form": "/",                     // 文件目录，可缺省，默认为当前目录
-	        "to": "server-save-path",        // 部署服务器保存的路径，可缺省，默认为当前目录,
-			"data": {},						 // 传送文件请求附加参数，可选
-			"ignore": []					 // 忽略文件
-	    }
-	}
-	
-
+```{
+    "prod": {
+        "receiver": "http://server-url", // 部署服务器地址，不可缺少！
+        "form": "/",                     // 文件目录，可缺省，默认为当前目录
+        "to": "server-save-path",        // 部署服务器保存的路径，可缺省，默认为当前目录,
+        "data": {},			 // 传送文件请求附加参数，可选
+        "ignore": []			 // 忽略文件
+    }
+}
+```
 需要部署时在项目运行命令
-
+```
 	poject-deploy prod
-
+```
 
 > 注：项目如果有多个部署配置，在配置文件中直接写即可，部署时poject-deploy [配置名]，不写默认会寻找prod配置，如果不存在会中止运行。
