@@ -1,7 +1,7 @@
 ## poject-deploy说明文档 ##
 
-> 版本： 1.0.22
-> 更新： 2018-12-21
+> 版本： 1.0.25
+> 更新： 2019-03-11
 
 poject-deploy是一个简单的远端服务器部署工具，主要实现：
 
@@ -30,8 +30,9 @@ poject-deploy是一个简单的远端服务器部署工具，主要实现：
         "form": "/",                            // 文件目录，可缺省，默认为当前目录
         "to": "server-save-path",		        // 部署服务器保存的路径，可缺省，默认为当前目录,
         "data": {},                             // 传送文件请求附加参数，可选
-        "ignore": [],                           // 忽略文件
-        "script": "depConf.data.time=newDate/1" // 发送前运行临时逻辑，像操作附加参数，补上时间戳等，json只能写字符串，不要太多太复杂，唉
+        "ignore": [],                           // 忽略文件，可选
+        "scriptTag": "test-script",         // 如果遇到xss拦截script标签，可以编辑为自定义标签，让后端收到文件后把自定义标签还原为script标签，可选
+        "script": "depConf.data.time=newDate/1" // 发送前运行可运行简单脚本逻辑，可选
     }
 }
 ```

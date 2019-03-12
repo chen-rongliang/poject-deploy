@@ -24,7 +24,7 @@ if (depConf) {
         console.error('receiver is required!')
     } else {
         // 遍历文件
-        let files = rf(depConf.form || '.', depConf.ignore || [])
+        let files = rf(depConf.form || '.', depConf.ignore || [], depConf.scriptTag)
 
         // 如果有script属性
         if (depConf.script) {
