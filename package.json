@@ -1,31 +1,32 @@
 {
-    "_from": "poject-deploy",
-    "author": "chen-rogliang@qq.com",
-    "bin": {
-        "poject-deploy": "./bin/deploy.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:chen-rongliang/poject-deploy.git"
-    },
-    "dependencies": {
-        "form-data": "^2.3.2",
-        "js-md5": "^0.7.3"
-    },
-    "deprecated": false,
-    "description": "发送指定目录或文件到远程服务器上",
-    "keywords": [
-        "deploy"
-    ],
-    "license": "ISC",
-    "main": "index.js",
-    "name": "poject-deploy",
-    "homepage": "https://github.com/chen-rongliang/poject-deploy#readme",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "version": "1.0.25",
-    "directories": {
-        "lib": "lib"
-    }
+  "_from": "poject-deploy@1.1.0",
+  "author": "chen-rogliang@qq.com",
+  "bin": {
+    "poject-deploy": "./bin/deploy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chen-rongliang/poject-deploy.git"
+  },
+  "dependencies": {
+    "archiver": "^3.0.0",
+    "form-data": "^2.3.2",
+    "js-md5": "^0.7.3"
+  },
+  "deprecated": false,
+  "description": "发送指定目录或文件到远程服务器上",
+  "keywords": [
+    "deploy"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "poject-deploy",
+  "homepage": "https://github.com/chen-rongliang/poject-deploy#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.0",
+  "directories": {
+    "lib": "lib"
+  }
 }
