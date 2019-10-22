@@ -49,6 +49,10 @@ if (depConf) {
                 // 开始传输流程
                 console.log('start upload => ' + command)
                 // gzip包超过1M大小的，用分片上传
+                
+                delete depConf.data.blob_index
+                delete depConf.data.total_blob
+                
                 if(depConf.zip && files[0].size > 1048576) {
                     slices({
                         receiver: depConf.receiver,
