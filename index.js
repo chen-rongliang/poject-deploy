@@ -71,7 +71,11 @@ if (depConf) {
                         receiver: depConf.receiver,
                         to: depConf.to || '/',
                         data: depConf.data || {},
-                        files
+                        files,
+                        callback: () => {
+                            // 删除临时压缩文件
+                            fs.unlink(files.pop().path, () => {})
+                        }
                     })
                 }
             } else {
