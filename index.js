@@ -48,9 +48,8 @@ if (depConf) {
             if (files.length) {
                 // 开始传输流程
                 console.log('start upload => ' + command)
-                // gzip包超过1M大小的，用分片上传
-                
-                if(depConf.zip && files[0].size > 1048576) {
+                // gzip包超过1M大小，或者配置中强制要求分片，用分片上传
+                if(depConf.zip && (depConf.patch || files[0].size > 1048576)) {
 
                     // 删除多余配置
                     delete depConf.data.blob_index
